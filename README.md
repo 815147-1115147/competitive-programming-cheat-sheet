@@ -1,165 +1,7 @@
-- [1. Basic](#1-basic)
-  - [1.1 C++ Solution Template](#11-c-solution-template)
-    - [1.1.1 Optional include list](#111-optional-include-list)
-  - [1.2 Strings](#12-strings)
-    - [1.2.1 C++ String](#121-c-string)
-      - [read one line](#read-one-line)
-      - [Convert to char array](#convert-to-char-array)
-    - [1.2.2 C String (Character Array)](#122-c-string-character-array)
-      - [Input C String](#input-c-string)
-      - [Convert to C++ string](#convert-to-c-string)
-  - [1.3 STL Algorithm](#13-stl-algorithm)
-    - [1.3.1 Permutation](#131-permutation)
-    - [1.3.2 Binary Search](#132-binary-search)
-    - [1.3.3 Lower Bound](#133-lower-bound)
-    - [1.3.4 Swap](#134-swap)
-    - [1.3.5 Heap](#135-heap)
-    - [1.3.6 Sort](#136-sort)
-    - [1.3.7 Compare](#137-compare)
-      - [Using lambda expression](#using-lambda-expression)
-      - [Compare function](#compare-function)
-      - [Define operator <()](#define-operator-)
-      - [Define operator()()](#define-operator)
-  - [1.4 STL Containers](#14-stl-containers)
-    - [1.4.1 Map](#141-map)
-      - [Define a Map](#define-a-map)
-      - [Commonly used method](#commonly-used-method)
-      - [Red-black Tree](#red-black-tree)
-      - [Hash Map (Unordered Map)](#hash-map-unordered-map)
-      - [Commonly used method](#commonly-used-method-1)
-    - [1.4.2 Pair](#142-pair)
-    - [1.4.3 Vector](#143-vector)
-      - [Constructor](#constructor)
-      - [Methods](#methods)
-    - [1.4.4 List](#144-list)
-      - [Methods](#methods-1)
-    - [1.4.5 Queue](#145-queue)
-    - [1.4.6 Double-ended Queue](#146-double-ended-queue)
-    - [1.4.7 Stack](#147-stack)
-    - [1.4.8 Priority Queue](#148-priority-queue)
-- [2. Advanced Data Structures](#2-advanced-data-structures)
-  - [2.1 Heap](#21-heap)
-  - [2.2 Tree](#22-tree)
-    - [2.2.0 Tree Traversal](#220-tree-traversal)
-    - [2.2.1 Pointer Jumping](#221-pointer-jumping)
-    - [2.2.2 Heavy-Light Decomposition](#222-heavy-light-decomposition)
-    - [2.2.3 Lowest Common Ancestor](#223-lowest-common-ancestor)
-      - [2.2.3.1 Tarjan's Off-line Algorithm](#2231-tarjans-off-line-algorithm)
-    - [2.2.4 Centroid Decomposition](#224-centroid-decomposition)
-  - [2.3 Trie / Trie Graph / AC Automaton](#23-trie--trie-graph--ac-automaton)
-  - [2.4 Suffix Tree](#24-suffix-tree)
-  - [2.5 Suffix Array](#25-suffix-array)
-    - [2.5.1 Build Suffix Array](#251-build-suffix-array)
-    - [2.5.2 Pattern Matching](#252-pattern-matching)
-    - [2.5.3 Longest Common Prefix](#253-longest-common-prefix)
-    - [2.5.4 Longest Repeated Substring](#254-longest-repeated-substring)
-    - [2.5.5 Longest Common Substring](#255-longest-common-substring)
-  - [2.6 Binary Indexed Tree](#26-binary-indexed-tree)
-  - [2.7 Segment Tree](#27-segment-tree)
-    - [2.7.0 Range Update + Range Query](#270-range-update--range-query)
-    - [2.7.1 Color](#271-color)
-    - [2.7.2 Range Sum + Range Replace](#272-range-sum--range-replace)
-  - [2.8 Range Minimum Query RMQ](#28-range-minimum-query-rmq)
-  - [2.9 Union-find Set](#29-union-find-set)
-    - [2.9.1 Union-find Set - application](#291-union-find-set---application)
-  - [2.10 Bloom Filter (?) (Similar)](#210-bloom-filter--similar)
-- [3. Methodology](#3-methodology)
-  - [3.0 Greedy](#30-greedy)
-  - [3.1 Recursive](#31-recursive)
-    - [3.1.1 Hanoi](#311-hanoi)
-  - [3.2 Dynamic Programming](#32-dynamic-programming)
-    - [3.2.1 Longest Increasing Subsequence (LIS)](#321-longest-increasing-subsequence-lis)
-  - [3.3 Divide and Conquer](#33-divide-and-conquer)
-    - [3.3.1 binary search](#331-binary-search)
-  - [3.4 Search](#34-search)
-    - [3.4.2 双向 BFS](#342-%E5%8F%8C%E5%90%91-bfs)
-    - [3.4.3 从终点开始搜](#343-%E4%BB%8E%E7%BB%88%E7%82%B9%E5%BC%80%E5%A7%8B%E6%90%9C)
-    - [3.4.4 迭代加深搜索 (binary increase/decrease)](#344-%E8%BF%AD%E4%BB%A3%E5%8A%A0%E6%B7%B1%E6%90%9C%E7%B4%A2-binary-increasedecrease)
-  - [3.5 Brute Force](#35-brute-force)
-    - [3.5.1 子集生成](#351-%E5%AD%90%E9%9B%86%E7%94%9F%E6%88%90)
-- [4. String](#4-string)
-  - [4.1 KMP](#41-kmp)
-  - [4.2 Boyer-Moore](#42-boyer-moore)
-  - [4.3 Longest palindromic substring (Manacher's algorithm)](#43-longest-palindromic-substring-manachers-algorithm)
-- [5. Graph](#5-graph)
-  - [5.1 Graph Structure](#51-graph-structure)
-  - [5.2 Minimium Spanning Tree](#52-minimium-spanning-tree)
-    - [5.2.1 Prim's](#521-prims)
-    - [5.2.2 Kruskal](#522-kruskal)
-  - [5.3 Shortest Path](#53-shortest-path)
-    - [5.3.1 任意两点](#531-%E4%BB%BB%E6%84%8F%E4%B8%A4%E7%82%B9)
-    - [5.3.2 Bellman–Ford](#532-bellman%E2%80%93ford)
-    - [5.3.3 SPFA](#533-spfa)
-    - [5.3.4 Dijkstra](#534-dijkstra)
-  - [5.4 Maximum Matching](#54-maximum-matching)
-    - [5.4.1 on Bipartite Graph 二分图](#541-on-bipartite-graph-%E4%BA%8C%E5%88%86%E5%9B%BE)
-      - [5.4.1.1 Hungarian algorithm 匈牙利算法](#5411-hungarian-algorithm-%E5%8C%88%E7%89%99%E5%88%A9%E7%AE%97%E6%B3%95)
-      - [5.4.1.2 Hopcroft–Karp Algorithm](#5412-hopcroft%E2%80%93karp-algorithm)
-    - [5.4.2 on General Graph](#542-on-general-graph)
-      - [5.4.2.1 Blossom Algorithm](#5421-blossom-algorithm)
-  - [5.5 Maximum Flow Problem 最大流](#55-maximum-flow-problem-%E6%9C%80%E5%A4%A7%E6%B5%81)
-    - [5.5.1 Dinic](#551-dinic)
-    - [5.5.2 Improved SAP + Gap Optimization](#552-improved-sap--gap-optimization)
-    - [5.5.3 Minimum-Cost Maximum-Flow](#553-minimum-cost-maximum-flow)
-    - [5.5.4 More Applications and Properties](#554-more-applications-and-properties)
-  - [5.6 强连通分量 图的 割点, 桥, 双连通分支](#56-%E5%BC%BA%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F-%E5%9B%BE%E7%9A%84-%E5%89%B2%E7%82%B9-%E6%A1%A5-%E5%8F%8C%E8%BF%9E%E9%80%9A%E5%88%86%E6%94%AF)
-  - [5.7 Topological Sort / 拓扑排序](#57-topological-sort--%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F)
-  - [5.8 Euler Cycle/Path, Hamilton Cycle/Path](#58-euler-cyclepath-hamilton-cyclepath)
-  - [5.9 find negative (weight) Cycle on a graph](#59-find-negative-weight-cycle-on-a-graph)
-- [6. Number + Mathematics](#6-number--mathematics)
-  - [6.1 BigInteger + BigDecimal](#61-biginteger--bigdecimal)
-    - [6.1.1 C++ Big Integer](#611-c-big-integer)
-    - [6.1.2 The Java Approach](#612-the-java-approach)
-  - [6.2 Matrix](#62-matrix)
-  - [6.3 Number Theory](#63-number-theory)
-    - [6.3.1 欧拉函数 ?](#631-%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0-)
-    - [6.3.2 欧几里得算法 / gcd](#632-%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95--gcd)
-    - [6.3.3 扩展欧几里得算法](#633-%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95)
-    - [6.3.4 求解不定方程](#634-%E6%B1%82%E8%A7%A3%E4%B8%8D%E5%AE%9A%E6%96%B9%E7%A8%8B)
-    - [6.3.5 求解模线性方程（线性同余方程）](#635-%E6%B1%82%E8%A7%A3%E6%A8%A1%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%EF%BC%88%E7%BA%BF%E6%80%A7%E5%90%8C%E4%BD%99%E6%96%B9%E7%A8%8B%EF%BC%89)
-    - [6.3.6 求解模的逆元](#636-%E6%B1%82%E8%A7%A3%E6%A8%A1%E7%9A%84%E9%80%86%E5%85%83)
-    - [6.3.7 中国剩余定理](#637-%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86)
-    - [6.3.8 最小公倍数](#638-%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0)
-    - [6.3.9 分解质因数](#639-%E5%88%86%E8%A7%A3%E8%B4%A8%E5%9B%A0%E6%95%B0)
-    - [6.3.10 因数个数](#6310-%E5%9B%A0%E6%95%B0%E4%B8%AA%E6%95%B0)
-    - [6.3.11 素数判定](#6311-%E7%B4%A0%E6%95%B0%E5%88%A4%E5%AE%9A)
-      - [6.3.11.1 Miller Rabin Primality Test](#63111-miller-rabin-primality-test)
-    - [6.3.12 进制转换](#6312-%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2)
-    - [6.3.13 A / C](#6313-a--c)
-    - [6.3.14 质数表](#6314-%E8%B4%A8%E6%95%B0%E8%A1%A8)
-    - [6.3.15 Fast Exponention](#6315-fast-exponention)
-    - [6.3.16 Fast Fourier Transform FFT](#6316-fast-fourier-transform-fft)
-  - [6.4 Game Theory 博弈论](#64-game-theory-%E5%8D%9A%E5%BC%88%E8%AE%BA)
-    - [6.4.1 Impartial Combinatorial Game](#641-impartial-combinatorial-game)
-      - [6.4.1.1 Nim Game](#6411-nim-game)
-      - [6.4.1.1 Composite Games – Sprague-Grundy Theorem and Nim Value](#6411-composite-games-%E2%80%93-sprague-grundy-theorem-and-nim-value)
-- [7. Geometry](#7-geometry)
-  - [7.1 2-Dimension Space](#71-2-dimension-space)
-    - [7.1.1 Template of Point](#711-template-of-point)
-    - [7.1.2 向量点乘 叉乘](#712-%E5%90%91%E9%87%8F%E7%82%B9%E4%B9%98-%E5%8F%89%E4%B9%98)
-    - [7.1.3 dot product](#713-dot-product)
-    - [7.1.4 cross product](#714-cross-product)
-    - [7.1.5 直线公式](#715-%E7%9B%B4%E7%BA%BF%E5%85%AC%E5%BC%8F)
-    - [7.1.6 Convex Hull](#716-convex-hull)
-      - [Gift Wrapping](#gift-wrapping)
-      - [QuickHull](#quickhull)
-      - [Graham scan](#graham-scan)
-- [8. Tricks + Miscellaneous](#8-tricks--miscellaneous)
-  - [8.1 Bit Manipulation](#81-bit-manipulation)
-  - [8.1 Cantor Expansion / Reverse Cantor Expansion](#81-cantor-expansion--reverse-cantor-expansion)
-  - [8.2 pass 2-D array](#82-pass-2-d-array)
-  - [8.3 Binary Display](#83-binary-display)
-  - [8.4 Fast Log](#84-fast-log)
-  - [8.5 Squre Root](#85-squre-root)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 ## 1. Basic
-
 ### 1.1 C++ Solution Template
-
 ```c++
-#include <bits/stdc++.h>
+#include <bits/stdc++.h
 
 #define DEBUG false
 #define OJ_DEBUG
@@ -174,14 +16,10 @@ using namespace std;
 
 int main() {
     ios::sync_with_stdio(false);
-    
 }
 ```
-
 #### 1.1.1 Optional include list
-
 > Use it when there is no `bits/stdc++.h`
-
 ```c++
 #include <iostream>
 #include <cstring>
@@ -197,93 +35,64 @@ int main() {
 #include <cassert>
 #include <unordered_map>
 ```
-
 ### 1.2 Strings
-
 #### 1.2.1 C++ String
-
 ##### read one line
-
 getline()
-
 ```C++
 string a;
 getline(cin, a);
 cout << a << endl;
 ```
-
 Input
-
 ```
 Hello World!!!
 ```
-
 Output
-
 ```
 Hello World!!!
 ```
-
 ##### Convert to char array
-
 ```C++
 string cppstr = "this is a string";
 char target[1024];
 strcpy(target, cppstr.c_str());
 ```
-
 #### 1.2.2 C String (Character Array)
-
 ##### Input C String
-
 gets()
-
 > Reads characters from the standard input (stdin) and stores them as a C string into str until a newline character or the end-of-file is reached.
-
 ```c++
 char s[12];
 gets(s);
 cout << "\"" << s << "\"" << ", length: " << strlen(s) << endl;
 ```
-
 Input
-
 ```
 hello world
 new line
 ```
-
 Output
-
 ```
 "hello world", length: 11
 ```
-
 ##### Convert to C++ string
-
 ```c++
 char arrstr[] = "this is a string";
 string target = string(arr);
 ```
-
 ### 1.3 STL Algorithm
-
 > Include the algorithm library if you do not use the solution template.
-
 ```C++
 #include <algorithm>
 ```
-
 #### 1.3.1 Permutation
-
 Usage
 ```c++
 bool next_permutation (BidirectionalIterator first, BidirectionalIterator last);
 bool next_permutation (BidirectionalIterator first, BidirectionalIterator last, Compare comp);
 ```
-
 Example
-
 ```C++
 // next_permutation example
 #include <iostream>     // std::cout
@@ -304,9 +113,7 @@ int main () {
   return 0;
 }
 ```
-
 Output
-
 ```
 The 3! possible permutations with 3 elements:
 1 2 3
@@ -317,37 +124,25 @@ The 3! possible permutations with 3 elements:
 3 2 1
 After loop: 1 2 3
 ```
-
 #### 1.3.2 Binary Search
-
 Usage
-
 ```C++
 bool binary_search (ForwardIterator first, ForwardIterator last, const T& val, Compare comp);
 // return true if found, false if not
 ```
-
 #### 1.3.3 Lower Bound
-
 > Returns an iterator pointing to the first element in the range [first,last) which does not compare less than val.
-
 Usage
-
 ```c++
 ForwardIterator lower_bound (ForwardIterator first, ForwardIterator last, const T& val, Compare comp);
 ```
-
 #### 1.3.4 Swap
-
 Usage
-
 ```c++
 void swap (T& a, T& b);
 void iter_swap (ForwardIterator1 a, ForwardIterator2 b);
 ```
-
 `iter_swap` example
-
 ```C++
 int myints[]={10,20,30,40,50 };              //   myints:  10  20  30  40  50
 std::vector<int> myvector (4,99);            // myvector:  99  99  99  99
@@ -355,59 +150,41 @@ std::vector<int> myvector (4,99);            // myvector:  99  99  99  99
 std::iter_swap(myints + 3,myvector.begin() + 2); //   myints:  99  20  30 [99] 50
                                              // myvector:  10  99 [40] 99
 ```
-
 #### 1.3.5 Heap
-
 * make_heap: Rearranges the elements in the range [first,last) in such a way that they form a heap. The element with the highest value is always pointed by first.
 * pop_heap: Rearranges the elements in the heap range [first,last) in such a way that the part considered a heap is shortened by one: The element with the highest value is moved to (last-1).
 * push_heap: Given a heap in the range [first,last-1), this function extends the range considered a heap to [first,last) by placing the value in (last-1) into its corresponding location within it.
 * sort_heap: Sorts the elements in the heap range [first,last) into ascending order.
-
 Usage
-
 ```c++
 void make_heap (RandomAccessIterator first, RandomAccessIterator last, Compare comp);
 void pop_heap (RandomAccessIterator first, RandomAccessIterator last, Compare comp);
 void push_heap (RandomAccessIterator first, RandomAccessIterator last, Compare comp);
 void sort_heap (RandomAccessIterator first, RandomAccessIterator last); Compare comp);
 ```
-
 #### 1.3.6 Sort
-
 > Sorts the elements in the range [first,last) into ascending order.
 `stable_sort` preserves the relative order of the elements with equivalent values.
-
 Usage
-
 ```c++
 void sort (RandomAccessIterator first, RandomAccessIterator last, Compare comp);
 void stable_sort ( RandomAccessIterator first, RandomAccessIterator last, Compare comp );
 ```
-
 #### 1.3.7 Compare
-
 ##### Using lambda expression
-
 ``` c++
 auto cmp = [](const T& a, const T& b) { return true; };
 set<T, decltype(cmp)> a_set_with_customized_comparator(cmp);
 ```
-
 ##### Compare function
-
 > Binary function that accepts two elements in the range as arguments, and returns a value convertible to bool. It should returns true if the first element is considered to be "smaller" than the second one.
-
 Using by `sort`, `make_heap` and etc.
-
 ```c++
 bool myfunction (int i,int j) { return (i<j); }
 ```
-
 ##### Define operator <()
-
 Member function
 > recommended // can use for priority_queue, sort, <ADD MORE HERE>
-
 ```c++
 struct Edge {
    int from, to, weight;
@@ -416,9 +193,7 @@ struct Edge {
     }
 };
 ```
-
 verbal version
-
 ```c++
 struct Edge {
    int from, to, weight;
@@ -427,9 +202,7 @@ struct Edge {
     }
 };
 ```
-
 Non-member function
-
 ```c++
 struct Edge {
     int from, to, weight;
@@ -438,17 +211,12 @@ struct Edge {
     }
 };
 ```
-
 ##### Define operator()()
-
 > You can use comparison function for STL containers by passing them as the first argument of the constructor, and specifying the function type as the additional template argument. For example:
-
 ```c++
 set<int, bool (*)(int, int)> s(cmp);
 ```
-
 > A functor, or a function object, is an object that can behave like a function. This is done by defining operator()() of the class. In this case, implement operator()() as a comparison function:
-
 ```c++
 vector<int> occurrences;
 struct cmp {
@@ -459,23 +227,15 @@ struct cmp {
 set<int, cmp> s;
 priority_queue<int, vector<int>, cmp> pq;
 ```
-
 Used by `priority_queue `.
-
 ### 1.4 STL Containers
-
 A container is a holder object that stores a collection of other objects (its elements). They are implemented as class templates, which allows a great flexibility in the types supported as elements.
-
 #### 1.4.1 Map
-
 > Maps are associative containers that store elements formed by a combination of a key value and a mapped value, following a specific order.
-
 ```c++
 #include <map>
 ```
-
 ##### Define a Map
-
 ```c++
 template < class Key,                                     // map::key_type
            class T,                                       // map::mapped_type
@@ -483,54 +243,36 @@ template < class Key,                                     // map::key_type
            class Alloc = allocator<pair<const Key,T> >    // map::allocator_type
            > class map;
 ```
-
 ##### Commonly used method
-
 ```
 begin()
 end()
-
 empty()
 size()
-
 operator[] // if not found, insert one
-
 insert(pair<first type, second type)
 erase()
 clear()
-
 find() // if not found, return end()
 count() // return 1 or 0
 ```
-
 > TODO add more interface
-
-
 ##### Red-black Tree
-
 C++ map is implemented as a red-black tree.
-
 A red–black tree is a data structure which is a type of self-balancing binary search tree.
-
 In addition to the requirements imposed on a binary search tree the following must be satisfied by a red–black tree:
-
 1. A node is either red or black.
 2. The root is black. (This rule is sometimes omitted. Since the root can always be changed from red to black, but not necessarily vice-versa, this rule has little effect on analysis.)
 3. All leaves (NIL) are black. (All leaves are same color as the root.)
 4. Every red node must have two black child nodes.
 5. Every path from a given node to any of its descendant leaves contains the same number of black nodes.
 
-
 ##### Hash Map (Unordered Map)
-
 > Unordered map is implemented as a hash table.
-
 ```c++
 #include <unordered_map>
 ```
-
 > Unordered maps are associative containers that store elements formed by the combination of a key value and a mapped value, and which allows for fast retrieval of individual elements based on their keys.
-
 ```c++
 template < class Key,                                    // unordered_map::key_type
            class T,                                      // unordered_map::mapped_type
@@ -538,29 +280,19 @@ template < class Key,                                    // unordered_map::key_t
            class Pred = equal_to<Key>,                   // unordered_map::key_equal
            class Alloc = allocator< pair<const Key,T> >  // unordered_map::allocator_type
            > class unordered_map;
-
 ```
-
 ##### Commonly used method
-
 ``` C++
 // most are similar to map
 ```
-
 // TODO add more interface
-
 #### 1.4.2 Pair
-
 #### 1.4.3 Vector
-
 ##### Constructor
-
 ```c++
 std::vector<int> second (4,100);  // four ints with value 100
 ```
-
 ##### Methods
-
 * begin(), end()
 * front(), back()
 * clear()
@@ -569,11 +301,8 @@ std::vector<int> second (4,100);  // four ints with value 100
 * pop_back()
 
 #### 1.4.4 List
-
 > List containers are implemented as doubly-linked lists.
-
 ##### Methods
-
 * begin(), end()
 * front(), back()
 * clear()
@@ -585,13 +314,12 @@ std::vector<int> second (4,100);  // four ints with value 100
 * insert(iterator position, const value_type& val)
 * size()
 * reverse()
-* sort(), sort (Compare comp)
-* 
+* sort()
+* sort (Compare comp)
 * resize()
 * reserve()
 
 #### 1.4.5 Queue
-
 ```C++
 #include <queue>
 ```
@@ -609,19 +337,14 @@ bool queue::empty() const;
 size_type queue::size() const;
 const_reference& queue::front() const;
 ```
-
 #### 1.4.6 Double-ended Queue
-
 ```C++
 #include <dequeue>
 ```
-
 #### 1.4.7 Stack
-
 ``` c++
 #include <stack>
 ```
-
 Constructor
 ```C++
 stack<int, vector<int> > my_stack (my_data);
@@ -633,13 +356,10 @@ const_reference& stack::top() const;
 void stack::push (const value_type& val);
 void stack::pop();
 ```
-
 #### 1.4.8 Priority Queue
-
 ``` c++
 #include <queue>
 ```
-
 ```C++
 // constructor
 priority_queue<int> my_priority_queue;
@@ -689,7 +409,6 @@ while (three_priority_queue.size() != 0) {
     three_priority_queue.pop();
 }
 
-
 // output
 // temp.weight = 4, temp.other = 483
 // temp.weight = 3, temp.other = 456
@@ -702,21 +421,13 @@ while (three_priority_queue.size() != 0) {
 // three_priority_queue.top() = 2
 // three_priority_queue.top() = 1
 ```
-
 ## 2. Advanced Data Structures
-
 ### 2.1 Heap
-
 ### 2.2 Tree
-
 #### 2.2.0 Tree Traversal
-
 #### 2.2.1 Pointer Jumping
-
 > Initialize: O(Nlog(N))
-> 
 > Query: O(Nlog(N))
-
 ```c++
 #define MAX_NODE 100030
 #define MAX_NODE_LOG 20
@@ -758,13 +469,9 @@ int go_up(int cur, int dis) {
 	return cur;
 }
 ```
-
 #### 2.2.2 Heavy-Light Decomposition
-
 > Build: O(N)
-> 
 > Overhead: O(log(N))
-
 ```c++
 // 
 // CodeForces 593D
@@ -773,7 +480,6 @@ int go_up(int cur, int dis) {
 // sol 2 - Heavy-Light Decomposition + Segment Tree + Math - not straightforward
 // 
 // floor( floor(A / B) / C) = floor(A / (B * C))
-// 
 
 #include <stdio.h>
 #include <sstream>
@@ -1071,7 +777,6 @@ struct Graph {
 		        st[cn1].update(cp1, cp2 - 1, e.y);
 	        }
         }
-        
         // for (int i = 0; i < chain_total; i++)
         // 	st[i].show();
     }
@@ -1110,7 +815,6 @@ struct Graph {
         		accu = will_boom(accu, temp);
         		break;
         	}
-
 
         	if (a != chain[cn1].head) {
         		int ha = chain[cn1].head;
@@ -1172,19 +876,12 @@ int main() {
     }
 }
 ```
-
 #### 2.2.3 Lowest Common Ancestor
-
 > Reduction from LCA to RMQ
->
 > let n = number of nodes in the tree
->
 > preprocess: euler tour O(n) + RMQ init O(nlog(n))
-> 
-> query: RMQ O(1)
-> 
+> query: RMQ O(1) 
 > [tutorial](https://www.topcoder.com/community/data-science/data-science-tutorials/range-minimum-query-and-lowest-common-ancestor/)
-
 ```c++
 // lowest common ancestor LCA
 // --> range minimun range_minimum_query
@@ -1270,7 +967,6 @@ struct Graph {
         }
         printf("\n");
     }
-
     // 
     // --- start of LCA ---
     // 
@@ -1374,9 +1070,7 @@ int main(int argc, char const *argv[]) {
     }
 }
 ```
-
 Another implementation, only used by ZXZ.
-
 ```c++
 const int MAX_N = 1e5 + 10;
 const int MAX_LOG_N = 21;
@@ -1432,13 +1126,9 @@ void init_rmq() {
     }
 }
 ```
-
 ##### 2.2.3.1 Tarjan's Off-line Algorithm
-
 > let n = number of ndoes of the tree, m = number of query
-> 
 > O(n + m)
-
 ```
 function TarjanOLCA(u)
      MakeSet(u);
@@ -1453,9 +1143,7 @@ function TarjanOLCA(u)
              print "Tarjan's Lowest Common Ancestor of " + u +
                    " and " + v + " is " + Find(v).ancestor + ".";
 ```
-
 > TODO refactor add comments
-
 ```c++
 // 
 // 1471. Tree
@@ -1596,15 +1284,11 @@ int main(int argc, char const *argv[]) {
     }
 }
 ```
-
 #### 2.2.4 Centroid Decomposition
-
 > O(NlogN)
-
 ```c++
 // 
 // https://threads-iiith.quora.com/Centroid-Decomposition-of-a-Tree
-// 
 // 
 // centroid decomposition O(NlogN)
 // 
@@ -1681,7 +1365,6 @@ struct Graph {
         }
         printf("\n");
     }
-
     // 
     // --- start of centroid decomposition --- 
     // 
@@ -1771,9 +1454,7 @@ struct Graph {
     // 
 };
 ```
-
 Key functions
-
 ```C++
 int dfs_size(int cur, int from) {
     int total = 1;
@@ -1839,11 +1520,8 @@ int query(int cur) {
     return ans;
 }
 ```
-
 ### 2.3 Trie / Trie Graph / AC Automaton
-
 > O(NL+M) - NL: total len of words in dict, M: len of article
-
 ```c++
 // 
 // input: n, q, string x n, string x q
@@ -1868,9 +1546,7 @@ int query(int cur) {
 // 3
 // 0
 // 0
-// 
-// 
-// 
+//
 // check if any word in dict appear in article
 // 
 // Sample Input
@@ -2057,8 +1733,6 @@ int main() {
     else
         cout << "NO" << endl;
 }
-```
-
 ```c++
 // http://blog.csdn.net/u010700335/article/details/38930175
 
@@ -2118,7 +1792,6 @@ bool trie_search(char *word)
     return tem->flag;
 }
 
-
 void trie_del(Trie *cur)
 {
     int i;
@@ -2129,7 +1802,6 @@ void trie_del(Trie *cur)
     }
     delete cur;
 }
-
 
 int main()
 {
@@ -2156,11 +1828,8 @@ int main()
     return 0;
 }
 ```
-
 ### 2.4 Suffix Tree
-
 ### 2.5 Suffix Array
-
 ```c++
 int main() {
 	cin >> s;
@@ -2171,13 +1840,9 @@ int main() {
 	longest_common_substring("GATAGACA", "CATA");
 }
 ```
-
 #### 2.5.1 Build Suffix Array 
-
 > O(nlog(n))
->
 > reference: Competitve Programming
-
 ```c++
 #include <iostream>
 #include <stdio.h>
@@ -2289,11 +1954,8 @@ void build_suffix_array() {
 	cout << endl;
 }
 ```
-
 #### 2.5.2 Pattern Matching
-
 > O(mlog(n))
-
 ```c++
 void find_pattern(const string& pattern) {
 	// binary search upper bound & lower bound (?) in the suffix array
@@ -2303,21 +1965,11 @@ void find_pattern(const string& pattern) {
 	// time complexity: O(mlog(n))
 }
 ```
-
 #### 2.5.3 Longest Common Prefix
-
 > length of common prefix between suffix_array[i-1] and suffix_array[i]
->
 > let n = s.length()
->
 > O(n)
-
 ```c++
-
-//
-// ...
-//
-
 int longest_common_prefix[HH]; // lcp[i] = length of common prefix between sa[i-1] and sa[i]
 int phi[HH]; // phi[sa[i]] = sa[i-1] // naming ? // useless when built
 int permuted_lcp[HH]; // useless when built temp for lcp
@@ -2347,13 +1999,9 @@ void compute_lcp() {
 	cout << endl;
 }
 ```
-
 #### 2.5.4 Longest Repeated Substring
-
 > let n = s.length()
->
 > O(n)
-
 ```c++
 void longest_repeated_substring() {
 	int len = s.length();
@@ -2368,17 +2016,11 @@ void longest_repeated_substring() {
 	cout << "longest repeated substring: " << s.substr(suffix_array[i_max], max_repeated) << endl;
 }
 ```
-
 #### 2.5.5 Longest Common Substring
-
 > string a, b (also applies to multiple strings)
->
 > construct Suffix Array of a.b & find Longest Common Prefix
->
 > let n = max(a.length(), b.length())
->
 > O(nlog(n) + n)
-
 ```c++
 void longest_common_substring(const string& a, const string& b) {
 	s = a + base_char + b;
@@ -2402,13 +2044,9 @@ void longest_common_substring(const string& a, const string& b) {
 	cout << "longest common prefix: " << s.substr(suffix_array[i_max], max_common) << endl;
 }
 ```
-
 ### 2.6 Binary Indexed Tree
-
 > Binary Indexed Tree
-
 > O(logN) to query and update SUM(a[1]~a[i])
-
 ```C++
 #define MAX_INDEX nnn
 
@@ -2430,15 +2068,10 @@ void insert(int i, int value) {
         tree[i] += value;
 }
 ```
-
 > 修改区间+查询点，
-> 
 > 【1】修改操作：将A[l..r]之间的全部元素值加上c；
-> 
 > 【2】求和操作：求此时A[x]的值。
-> 
 > 这个模型中需要设置一个辅助数组B：B[i]表示A[1..i]到目前为止共被整体加了多少
-
 ```C++
 #define INTERVAL_LIMIT 100005
 
@@ -2471,44 +2104,24 @@ int main() {
         SHOW_B(i, query(i, tree_add_in, INTERVAL_LIMIT));
 }
 ```
-
 > 修改区间+查询区间
-> 
 > b[i]: add b[i] to a[i], a[i+1], ..., a[n]
-> 
 > so
-> 
 > sigma(i): a[1] + a[2] + ... + a[i]
-> 
 > sigma(i) = ib[1] + (i-1)b[2] + ... + 2b[i-1] + b[i]
-> 
 > sigma(i) = (i+1){b[1] + b[2] + ... + b[i]} - {b[1] + 2b[2] + ... + ib[i]}
-> 
 > so use one more tree c[i]
-> 
 > c[i]: 1b[1] + 2b[2] + ... + ib[i]
-
 ### 2.7 Segment Tree
-
 #### 2.7.0 Range Update + Range Query
-
 > with lazy propagation
-> 
 > build O(N)
-> 
 > query O(log(N))
-> 
 > update O(log(N))
-
 ```c++
-// 
 // CodeForces 243D	Cubes
-// 
 // dynamic programming + segment tree + math - O(N*N*log(N)) - not straightforward
-// 
 // struct SegmentTree is slow, use with caution
-// 
-// 
 
 #include <stdio.h>
 #include <sstream>
@@ -2786,9 +2399,7 @@ int main() {
     printf("%lld\n", ans);
 }
 ```
-
 #### 2.7.1 Color
-
 ```c++
 const int MAX = 100000;
 
@@ -2854,12 +2465,10 @@ void query(int left, int right, int &sum, int u) {
         query(left, right, sum, 2*u + 1);
     }
 }
-
 // Usage
 // build_tree(1, L, 1);
 // update(a, b, new_color, 1);
 // query(a, b, sum_as_reference, 1);
-
 // only for this question
 int bit_count(int sum) {
     int ans = 0;
@@ -2893,9 +2502,7 @@ int main() {
     return 0;
 }
 ```
-
 #### 2.7.2 Range Sum + Range Replace
-
 ```c++
 const int MAX = 30005;
 
@@ -2963,15 +2570,12 @@ void query(int left, int right, long long &sum, int u) {
         query(left, right, sum, 2*u + 1);
     }
 }
-
 // Usage
 // build_tree(1, L, 1);
 // update(a, b, new_value, 1);
 // query(a, b, sum_as_reference, 1);
 ```
-
 ### 2.8 Range Minimum Query RMQ
-
 ```c++
 struct RMQ { // not tested
     const static int MAXLENGTH = 2 * 1e5 + 3;
@@ -3006,9 +2610,7 @@ struct RMQ { // not tested
     }
 };
 ```
-
 ### 2.9 Union-find Set
-
 ```C++
 struct UnionFindSet {
 	vector<int> parent;
@@ -3029,17 +2631,11 @@ struct UnionFindSet {
 	}
 };
 ```
-
 #### 2.9.1 Union-find Set - application
-
 > place holder
-
 ### 2.10 Bloom Filter (?) (Similar)
-
 > Can calculate hash of number sequence quickly.
-> 
 > If too slow, set REPEAT smaller. Or try again:)
-
 ```c++
 #include <random>
 
@@ -3076,7 +2672,6 @@ struct BloomFilterSimilar {
 				return false;
 		return true; // possible False Positive
 	}
-
 	// void insert(int val) {
 	// 	insert(get_hash(val));
 	// }
@@ -3086,17 +2681,11 @@ struct BloomFilterSimilar {
 	}
 };
 ```
-
 ## 3. Methodology
-
 ### 3.0 Greedy
-
 > It's Art.
-
 ### 3.1 Recursive
-
 #### 3.1.1 Hanoi
-
 ```C++
 void hanoi(int n, char x, char y, char z) { // 将 x 上编号 1 至 n 的圆盘移到 z, y 作辅助塔
     if (n == 1)
@@ -3108,13 +2697,9 @@ void hanoi(int n, char x, char y, char z) { // 将 x 上编号 1 至 n 的圆盘
     }
 }
 ```
-
 ### 3.2 Dynamic Programming
-
 #### 3.2.1 Longest Increasing Subsequence (LIS)
-
 > O(nlog(n))
-
 ```c++
 vector<int> sequence;
 vector<int> lis(sequence.size() + 1, INT_MAX); // [i]: min value in sequence that have LIS = i
@@ -3124,33 +2709,19 @@ for (int i = 0; i < sequence.size(); i++) {
     *ptr = min(*ptr, r);
 }
 ```
-
 ### 3.3 Divide and Conquer
-
 #### 3.3.1 binary search
-
 ### 3.4 Search
-
 #### 3.4.2 双向 BFS
-
 #### 3.4.3 从终点开始搜
-
 #### 3.4.4 迭代加深搜索 (binary increase/decrease)
-
 > placeholder
-
 ### 3.5 Brute Force
-
 #### 3.5.1 子集生成
-
 ## 4. String
-
 ### 4.1 KMP
-
 > Match pattern in a string
-> 
 > O(n) = O(len(pattern) + len(string))
-
 ```C++
 #define HHH 10003
 
@@ -3176,7 +2747,6 @@ int kmp(string& par, string& ori) {
             match++;
         }
     }
-
     return match; // return number of occurance
 }
 
@@ -3188,13 +2758,9 @@ int main () {
     return 0;
 }
 ```
-
 ### 4.2 Boyer-Moore
-
 ### 4.3 Longest palindromic substring (Manacher's algorithm)
-
 > O(n)
-
 ```c++
 int dp[HHH];
 int lengthLongestPalindromSubstring(string& s) {
@@ -3209,7 +2775,6 @@ int lengthLongestPalindromSubstring(string& s) {
             dp[i] = dp[2*pivot-i];
             iBorder = min(pBorder, i + dp[i]);
         }
-
         if (iBorder >= pBorder) {
             int j = iBorder + (iBorder % 2 ? 2 : 1);
             for (; j < len && 2*i-j > 0 && s[j/2] == s[(2*i-j)/2]; j += 2)
@@ -3232,11 +2797,8 @@ int main () {
     return 0;
 }
 ```
-
 ## 5. Graph
-
 ### 5.1 Graph Structure
-
 ```c++
 struct Graph {
     struct Edge {
@@ -3273,8 +2835,6 @@ struct Graph {
         printf("\n");
     }
 };
-```
-
 ```c++
 struct Network {
     struct Edge {
@@ -3317,13 +2877,9 @@ struct Network {
     }
 }
 ```
-
 ### 5.2 Minimium Spanning Tree
-
 #### 5.2.1 Prim's
-
 > O((V + E)log(V))
-
 ```C++
 struct Graph {
     struct Edge {
@@ -3359,7 +2915,6 @@ struct Graph {
     	}
     	printf("\n");
     }
-
     // 
     // ---- start of Minimum Spanning Tree ---
     // 
@@ -3396,18 +2951,14 @@ struct Graph {
             while (near.size() && added[near.top().to])
                 near.pop();
         }
-        // 
     }
     // 
     // ---- end of Minimum Spanning Tree ---
     // 
 };
 ```
-
 #### 5.2.2 Kruskal
-
 > Elog(E) + Elog(V)
-
 ```C++
 struct Graph {
     struct Edge {
@@ -3443,7 +2994,6 @@ struct Graph {
     	}
     	printf("\n");
     }
-
     // 
     // ---- start of Minimum Spanning Tree ---
     // 
@@ -3471,37 +3021,26 @@ struct Graph {
     // 
 };
 ```
-
 ### 5.3 Shortest Path
-
 #### 5.3.1 任意两点
-
 ```
 for (k)
     for (i)
         for (j)
         	d(i, j) = min(d(i, j), d(i, k) + d(j, k))
 ```
-
 #### 5.3.2 Bellman–Ford
-
 > Bellman–Ford algorithm is O(VE).
 > Can be applied to situations when there is a maximun number of vertices in shortest path.
-
 ```
 for (n times of relax)
     for (each node)
         relax each node
 ```
-
 #### 5.3.3 SPFA
-
 #### 5.3.4 Dijkstra
-
 > Dijkstra is good for graphs non-negative edges.
-
 > O(Vlog(E)) (?)
-
 ```c++
 void dijkstra(int s) {
     map<int, queue<int>> m;
@@ -3528,9 +3067,7 @@ void dijkstra(int s) {
     cout << endl;
 }
 ```
-
 If you want to write compare operator().
-
 ```c++
 struct cmp {
     bool operator()(pair<int, int> a, pair<int, int> b) {
@@ -3558,19 +3095,13 @@ void dijkstra(int s) {
     }
 }
 ```
-
 ### 5.4 Maximum Matching
-
 #### 5.4.1 on Bipartite Graph 二分图
-
 > 1. A graph is bipartite if and only if it does not contain an odd cycle.
 > 2. A graph is bipartite if and only if it is 2-colorable, (i.e. its chromatic number is less than or equal to 2).
 > 3. The spectrum of a graph is symmetric if and only if it's a bipartite graph.
-
 ##### 5.4.1.1 Hungarian algorithm 匈牙利算法
-
 > O(E * V)
-
 ```c++
 struct Network {
     struct Edge {
@@ -3616,7 +3147,6 @@ struct Network {
         }
         printf("\n");
     }
-
     // 
     // bipartite match
     // O(V * E)
@@ -3659,11 +3189,8 @@ struct Network {
     // 
 };
 ```
-
 ##### 5.4.1.2 Hopcroft–Karp Algorithm
-
 > O(sqrt(V)*E)
-
 ```c++
 #define MAXN 1010
 #define MAXINT 0x7fffffff
@@ -3737,13 +3264,9 @@ int main() {
     cout << ans << endl;
 }
 ```
-
 #### 5.4.2 on General Graph
-
 ##### 5.4.2.1 Blossom Algorithm
-
 [一般图最大匹配](http://www.conlan.cc/2013/03/08/%E4%B8%80%E8%88%AC%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D/)
-
 ```c++
 const int NMax = 230;
 
@@ -3870,9 +3393,7 @@ int main() {
             printf("pair: %d %d\n", i + 1, spouse[i] + 1);
 }
 ```
-
 ### 5.5 Maximum Flow Problem 最大流
-
 #### 5.5.1 Dinic
 ```c++
 // a convenient class
@@ -3921,7 +3442,6 @@ struct Network {
         }
         printf("\n");
     }
-
     // 
     // maximum flow
     // dinic O(V * V * E)
@@ -3982,12 +3502,8 @@ struct Network {
     // 
 };
 ```
-
-
 #### 5.5.2 Improved SAP + Gap Optimization
-
 > TODO add more optimizations
-
 ```c++
 struct Network {
     struct Edge {
@@ -4033,8 +3549,6 @@ struct Network {
         }
         printf("\n");
     }
-    
-    // 
     // maximum flow
     // isap + gap O(V * V * E)
     // a bit faster than dinic
@@ -4102,7 +3616,6 @@ struct Network {
                 }
                 ie = e.pre_edge;
             }
-            
             if (found)
                 continue;
 
@@ -4130,9 +3643,7 @@ struct Network {
     // 
 };
 ```
- 
 #### 5.5.3 Minimum-Cost Maximum-Flow 
-
 ```C++
 // have not tested
 int n_node;
@@ -4184,66 +3695,36 @@ void min_cost_max_flow() {
     cout << flow_sum << " " << cost_sum << endl;
 }
 ```
-
 #### 5.5.4 More Applications and Properties
-
 > placeholder
-
 ### 5.6 强连通分量 图的 割点, 桥, 双连通分支
-
 ``https://www.byvoid.com/blog/biconnect``
-
 > [点连通度与边连通度]
-> 
 > 在一个无向连通图中，如果有一个顶点集合，删除这个顶点集合，以及这个集合中所有顶点相关联的边以后，原图变成多个连通块，就称这个点集为割点集合。一个图的点连通度的定义为，最小割点集合中的顶点数。
-> 
 > 类似的，如果有一个边集合，删除这个边集合以后，原图变成多个连通块，就称这个点集为割边集合。一个图的边连通度的定义为，最小割边集合中的边数。
-> 
 > [双连通图、割点与桥]
-> 
 > 如果一个无向连通图的点连通度大于1，则称该图是点双连通的(point biconnected)，简称双连通或重连通。一个图有割点，当且仅当这个图的点连通度为1，则割点集合的唯一元素被称为割点(cut point)，又叫关节点(articulation point)。
-> 
 > 如果一个无向连通图的边连通度大于1，则称该图是边双连通的(edge biconnected)，简称双连通或重连通。一个图有桥，当且仅当这个图的边连通度为1，则割边集合的唯一元素被称为桥(bridge)，又叫关节边(articulation edge)。
-> 
 > 可以看出，点双连通与边双连通都可以简称为双连通，它们之间是有着某种联系的，下文中提到的双连通，均既可指点双连通，又可指边双连通。
-> 
 > [双连通分支]
-> 
 > 在图G的所有子图G'中，如果G'是双连通的，则称G'为双连通子图。如果一个双连通子图G'它不是任何一个双连通子图的真子集，则G'为极大双连通子图。双连通分支(biconnected component)，或重连通分支，就是图的极大双连通子图。特殊的，点双连通分支又叫做块。
-> 
 > [求割点与桥]
-> 
 > 该算法是R.Tarjan发明的。对图深度优先搜索，定义DFS(u)为u在搜索树（以下简称为树）中被遍历到的次序号。定义Low(u)为u或u的子树中能通过非父子边追溯到的最早的节点，即DFS序号最小的节点。根据定义，则有：
-> 
 > Low(u)=Min { DFS(u) DFS(v) (u,v)为后向边(返祖边) 等价于 DFS(v)<DFS(u)且v不为u的父亲节点 Low(v) (u,v)为树枝边(父子边) }
-> 
 > 一个顶点u是割点，当且仅当满足(1)或(2) (1) u为树根，且u有多于一个子树。 (2) u不为树根，且满足存在(u,v)为树枝边(或称父子边，即u为v在搜索树中的父亲)，使得DFS(u)<=Low(v)。
-> 
 > 一条无向边(u,v)是桥，当且仅当(u,v)为树枝边，且满足DFS(u)<Low(v)。
-> 
 > [求双连通分支]
-> 
 > 下面要分开讨论点双连通分支与边双连通分支的求法。
-> 
 > 对于点双连通分支，实际上在求割点的过程中就能顺便把每个点双连通分支求出。建立一个栈，存储当前双连通分支，在搜索图时，每找到一条树枝边或后向边(非横叉边)，就把这条边加入栈中。如果遇到某时满足DFS(u)<=Low(v)，说明u是一个割点，同时把边从栈顶一个个取出，直到遇到了边(u,v)，取出的这些边与其关联的点，组成一个点双连通分支。割点可以属于多个点双连通分支，其余点和每条边只属于且属于一个点双连通分支。
-> 
 > 对于边双连通分支，求法更为简单。只需在求出所有的桥以后，把桥边删除，原图变成了多个连通块，则每个连通块就是一个边双连通分支。桥不属于任何一个边双连通分支，其余的边和每个顶点都属于且只属于一个边双连通分支。
-> 
 > [构造双连通图]
-> 
 > 一个有桥的连通图，如何把它通过加边变成边双连通图？方法为首先求出所有的桥，然后删除这些桥边，剩下的每个连通块都是一个双连通子图。把每个双连通子图收缩为一个顶点，再把桥边加回来，最后的这个图一定是一棵树，边连通度为1。
-> 
 > 统计出树中度为1的节点的个数，即为叶节点的个数，记为leaf。则至少在树上添加(leaf+1)/2条边，就能使树达到边二连通，所以至少添加的边数就是(leaf+1)/2。具体方法为，首先把两个最近公共祖先最远的两个叶节点之间连接一条边，这样可以把这两个点到祖先的路径上所有点收缩到一起，因为一个形成的环一定是双连通的。然后再找两个最近公共祖先最远的两个叶节点，这样一对一对找完，恰好是(leaf+1)/2次，把所有点收缩到了一起。
 
 find articulation point (cut vertex) / bridge (cutedge) in directed / undirected graph
-
 find and merge biconnected component in undirected graph
-
 find and merge strongly connected component in directed graph
-
-
 time complexity `O(E+V)`
-
 ``` c++
 #define NN 20002
 #define MM 100002
@@ -4259,7 +3740,9 @@ int temp_component[NN];
 
 vector<int> g[NN];
 
-void merge(const vector<int>& component) {
+void merge(const vector<int
+
+& component) {
     vector<int> out_vertex;
     int new_vertex = component.back();
     for (int v : component)
@@ -4310,7 +3793,6 @@ void dfs(int cur) {
             if (visit_order[cur] < smallest_order_can_reach[next])
                 ;
         }
-
             // for undirected graph
             // update the smallness of vertex that can reach
 //        else if (next != parent[cur])
@@ -4351,17 +3833,13 @@ int main() {
         cin >> a >> b;
         g[a].push_back(b);
     }
-
     dfs(1);
 }
 ```
-
 ### 5.7 Topological Sort / 拓扑排序
-
 > Topological Sorting on Directed Acyclic Graph (DAG)
 >
 > time complexity `O(N)`
-
 ```c++
 struct Graph {
     struct Edge {
@@ -4430,23 +3908,13 @@ struct Graph {
     }
 };
 ```
-
-
 ### 5.8 Euler Cycle/Path, Hamilton Cycle/Path
-
 > place holder
-
 ### 5.9 find negative (weight) Cycle on a graph
-
 > place holder
-
-
 ## 6. Number + Mathematics
-
 ### 6.1 BigInteger + BigDecimal
-
 #### 6.1.1 C++ Big Integer
-
 ```c++
 const int BASE_LENGTH = 2;
 const int BASE = (int) pow(10, BASE_LENGTH);
@@ -4469,7 +3937,7 @@ struct bigint {
         memset(s, 0, sizeof(s));  
         len = 1;  
     }
-
+    
     bigint(unsigned long long num) {
         len = 0;
         while (num >= BASE) {
@@ -4479,7 +3947,7 @@ struct bigint {
         }
         s[len++] = num;
     }
-
+    
     bigint(const char* num) {
         int l = strlen(num);
         len = l/BASE_LENGTH;
@@ -4593,9 +4061,7 @@ struct bigint {
     }
 };
 ```
-
 Examples
-
 ```c++
 ASSERT((a+b).str()=="10001")
 ASSERT((a+b)==bigint(10001))
@@ -4612,23 +4078,15 @@ ASSERT((b-1)==9998)
 ASSERT(a.ll() == 2)
 ASSERT(b.ll() == 9999)
 ```
-
-
 #### 6.1.2 The Java Approach 
-
 BigInteger & BigDecimal
-
 ### 6.2 Matrix
-
 ```C++
 operator+
 operator*
 ```
-
 > Square matrix
-
 ```C++
-
 struct Matrix {
     // int height;
     // int width;
@@ -4684,13 +4142,9 @@ Matrix Matrix::mirror() {
     return temp;
 }
 ```
-
 ### 6.3 Number Theory
-
 #### 6.3.1 欧拉函数 ?
-
 #### 6.3.2 欧几里得算法 / gcd
-
 ```c++
 int gcd(int a, int b) {
     return b == 0 ? a : gcd(b, a % b);
@@ -4700,43 +4154,24 @@ int lcm(int a, int b) {
     return a / gcd(a, b) * b;
 }
 ```
-
 #### 6.3.3 扩展欧几里得算法 
-
 ``http://www.cnblogs.com/frog112111/archive/2012/08/19/2646012.html``
-
 > 对于不完全为 0 的非负整数 a, b, 必然存在整数对 (x, y), 使得 gcd(a, b) = ax + by
-
 > suppose: a > b, we want to get (x1, y1)
-
 > (i) if b == 0, then gcd(a, b) = a = ax + 0, then x1 = 1, y1 = 0
-
 > (ii) if b != 0:
-
 >   (1): a * x1 + b * y1 = gcd(a, b)
-
 >   (2): b * x2 + (a % b) * y2 = gcd(b, a % b)
-    
 >   (1) == (2)
-
 >   so: a * x1 + b * y1 = b * x2 + (a % b) * y2
-    
 >   so: a * x1 + b * y1 = b * x2 + (a - (int)(a / b) * b) * y2
-    
 >   so: a * x1 + b * y1 = a * y2 + b * (x2 - (int)(a / b) * y2)
-    
 >   so: x1 = y2, y1 = x2 - (int)(a / b) * y2, can get (x1, y1) from (x2, y2)
-
 >   next:
-
 >       (1): b * x2 + (a % b) * y2 = gcd(b, a % b)
-        
 >       (2): (a % b) * x3 + b % (a % b) * y3 = gcd(a % b, b % (a % b))
-        
 >       so: can get (x2, y2) from (x3, y3)
-        
 >       next: ... until in gcd(a, b), b == 0, then xi = 1, yi = 0, go back ...
-
 ```C++
 long long ansx, ansy, ansd;
 
@@ -4766,29 +4201,16 @@ int main(int argc, char const *argv[]) {
     // ansd is the a when b == 0, which is just gcd(a, b)
 }
 ```
-
 #### 6.3.4 求解不定方程
-
 > for: p * a + q * b = c
-
 > if c % gcd(a, b) == 0, then 有整数解 (p, q), else NO
-
-
 > if we get (p0, q0) for p0 * a + q0 * b = gcd(a, b)
-
 > then: for p * a + q * b = gcd(a, b) (k is any integer)
-
 > p = p0 + b / gcd(a, b) * k
-
 > q = q0 - a / gcd(a, b) * k
-
-
 > then: for p * a + q * b = c = c / gcd(a, b) * gcd(a, b) (k is any integer)
-
 > p = (p0 + b / gcd(a, b) * k) * c / gcd(a, b)
-
 > q = (q0 - a / gcd(a, b) * k) * c / gcd(a, b)
-
 ```C++
 // after get ansx, ansy, ansd
 // test if c % ansd == 0
@@ -4796,52 +4218,32 @@ int main(int argc, char const *argv[]) {
 // ansy = (ansy - a / gcd(a, b) * k) * c / gcd(a, b)
 // smallest: ansx % (b / gcd(a, b) + b / gcd(a, b)) % (b / gcd(a, b))
 ```
-
 #### 6.3.5 求解模线性方程（线性同余方程）
-
 > (a * x) % n = b % n, x = ?
-
 > same as: a * x + n * y= b
-
 > so: one answer for a * x + n * y= b is: x * b / gcd(a, n)
-
 > so: one answer for (a * x) % n = b % n is: x0 = (x * b / gcd(a, n)) % n
-
 > other answer xi = (x0 + i * (n / gcd(a, n))) % n, i = 0...gcd(a, n)-1
-
 > smallest answer is x0 % (n / gcd(a, n) + gcd(a, n)) % gcd(a, n)
-
 ```C++
 ```
-
 #### 6.3.6 求解模的逆元
-
 > (a * x) % n = 1, x = ?
-
 > if gcd(a, n) != 1, then NO answer
-
 > else:
-
 > same as: a * x + n * y = 1
-
 > can get only one answer x
-
 ```C++
 // after get ansx, ansy, ansd
 // if ansd != 1, then NO answer
 // smallest ansx = (ansx % (n / gcd(a, n)) + (n / gcd(a, n))) % (n / gcd(a, n))
 ```
-
 #### 6.3.7 中国剩余定理
-
 #### 6.3.8 最小公倍数
-
 ```C++
 a / gcd(a, b) * b
 ```
-
 #### 6.3.9 分解质因数
-
 ```C++
 long long x;
 cin >> x;
@@ -4852,18 +4254,13 @@ for (long long factor = 2; x != 1; factor++) {
         x = x / factor;
 }
 ```
-
 #### 6.3.10 因数个数
-
 ```C++
 n = p1 ^ x1 * p2 ^ x2 * ... * pn ^ xn
 total = (x1 + 1) * (x2 + 1) * ... * (xn + 1)
 ```
-
 #### 6.3.11 素数判定
-
 > 大于 3 的质数可以被表示为 6n - 1 或 6n + 1
-
 ```C++
 bool is_prime(int n) {
     if (n == 1 || n % 2 == 0)
@@ -4875,11 +4272,8 @@ bool is_prime(int n) {
     return true;
 }
 ```
-
 ##### 6.3.11.1 Miller Rabin Primality Test
-
 > O(k(logN)^3)
-
 ```c++
 class MillerRabin { // O(k(logX)^3)
     long long mulmod(long long a, long long b, long long c) {
@@ -4946,9 +4340,7 @@ public:
     }
 };
 ```
-
 #### 6.3.12 进制转换
-
 ```C++
 void convert_dec_to_base(int n, const int base) {
     if (n == 0)
@@ -4967,13 +4359,9 @@ int convert_base_to_dec(const int s[], const int len, const int base) {
     return result;
 }
 ```
-
 #### 6.3.13 A / C
-
 > C(n, k) = C(n-1, k) + C(n-1, k-1)
-> 
 > C(n, k) = C(n, n-k)
-
 ```c++
 #define MAXN 1002
 #define MOD 1000000007
@@ -4987,9 +4375,7 @@ void init_choose_n_k() {
     }
 }
 ```
-
 #### 6.3.14 质数表
-
 ```C++
 int is_prime[UP_LIMIT + 1];
 for (int i = 1; i <= UP_LIMIT; i++) // init to 1
@@ -5001,11 +4387,8 @@ for (int k = 3; k*k <= UP_LIMIT; k++) // start from 9, end at sqrt
         for(int i = k*k; i <= UP_LIMIT; i += 2*k) // every two is not 
             is_prime[i] = 0;
 ```
-
 #### 6.3.15 Fast Exponention
-
 > To calculate n ^ p % M
-
 ```C++
 int power_modulo(int n, int p, int M) {
     int result = 1;
@@ -5018,15 +4401,10 @@ int power_modulo(int n, int p, int M) {
     return result;
 }
 ```
-
 #### 6.3.16 Fast Fourier Transform FFT
-
 > [Reference 1](www.gatevin.moe/acm/fft算法学习笔记/)
-> 
 > [Reference 2](https://github.com/marioyc/ACM-ICPC-Library/blob/master/math/fft.cpp)
-> 
 > Example: calculate two number C = A * B
-
 ```c++
 #include <iostream>
 #include <vector>
@@ -5140,51 +4518,31 @@ int main() { // multiply two number
 	}
 }
 ```
-
 ### 6.4 Game Theory 博弈论
-
 #### 6.4.1 Impartial Combinatorial Game
-
 > In combinatorial game theory, an impartial game is a game in which the allowable moves depend only on the position and not on which of the two players is currently moving, and where the payoffs are symmetric. In other words, the only difference between player 1 and player 2 is that player 1 goes first.
-
 > Impartial games can be analyzed using the Sprague–Grundy theorem.
-
 > Impartial games include Nim, Sprouts, Kayles, Quarto, Cram, Chomp, and poset games. Go and chess are not impartial, as each player can only place or move pieces of their own color. Games like ZÈRTZ and Chameleon are also not impartial, since although they are played with shared pieces, the payoffs are not necessarily symmetric for any given position.
-
 > A game that is not impartial is called a partisan game.
-> 
-> [source: wiki](https://en.wikipedia.org/wiki/Impartial_game)
-> 
+> [source: wiki](https://en.wikipedia.org/wiki/Impartial_game) 
 > [tutorial: topcoder](https://www.topcoder.com/community/data-science/data-science-tutorials/algorithm-games/)
-
 ##### 6.4.1.1 Nim Game
-
 > One good choice: brute force to find some pattern.
-> 
 > We will not be able to play many of the games without decomposing them to smaller parts (sub-games), pre-computing some values for them, and then obtaining the result by combining these values.
-> 
 > Positions have the following properties:
-> 
 > - All terminal positions are losing.
 > - If a player is able to move to a losing position then he is in a winning position.
 > - If a player is able to move only to the winning positions then he is in a losing position.
-> 
 > Rules of the Game of Nim: There are n piles of coins. When it is a player’s turn he chooses one pile and takes at least one coin from it. If someone is unable to move he loses (so the one who removes the last coin is the winner).
-> 
 > Let n1, n2, ..., nk, be the sizes of the piles. It is a losing position for the player whose turn it is if and only if n1 xor n2 xor ... xor nk = 0.
-
 ##### 6.4.1.1 Composite Games – Sprague-Grundy Theorem and Nim Value
-
 > - Break composite game into subgames
 > - Assign grundy number to every subgame according to which size of the pile in the Game of Nim it is equivalent to.
 > - Now we have some subgames (piles), each subgame has its grundy number (size of pile)
 > - xor all subgames
-
 > - Losing position of subgame has grundy number = 0.
 > - A position has grundy number = smallest number among its next positions don't have.
-
 > If the table of grundy number is too large, we can precompute and find the pattern.
-
 ```c++
 // hihocoer 1173
 const int MAXSTATE = 2e4 + 2;
@@ -5210,9 +4568,7 @@ void init_sg() {
 }
 
 int main() {
-
     init_sg();
-
 	// --- start of finding pattern ---
 	// 
     // --- end of finding pattern ---
@@ -5240,15 +4596,9 @@ int main() {
     	cout << "Bob" << endl;
 }
 ```
-
-
-
 ## 7. Geometry
-
 ### 7.1 2-Dimension Space
-
 #### 7.1.1 Template of Point
-
 ```C++
 struct point {
     int x, y;
@@ -5319,53 +4669,30 @@ struct point {
     }
 };
 ```
-
 #### 7.1.2 向量点乘 叉乘
-
 > a = (x1, y1)
-> 
 > b = (x2, y2)
-> 
 > i ... |i| = 1, vertical to a-b surface
-
 #### 7.1.3 dot product
 > a dot b = x1 * x2 + y1 * y2 = |a| * |b| * cos(angle)
-> 
 > if = 0: 90 degree
-> 
 > a dot b / |b| = a project to b
-
 #### 7.1.4 cross product
 > a x b = x1 * y2 - x2 * y1 = |a| * |b| * sin(angle) * i
-> 
 > if < 0: b is at left of a
-> 
 > if = 0: a, b in a line
-> 
 > if 0: b is at right of a
-> 
 > a x b = area of 平行四边形
-> 
 > a x b x c = area of 平行六面体, c = (x3, y3)
-
 #### 7.1.5 直线公式
-
 > (x, y) = (x1, y1) + k * ((x2, y2) - (x1, y1))
-
 #### 7.1.6 Convex Hull
-
 ##### Gift Wrapping
-
 > place holder
-
 ##### QuickHull
-
 > place holder
-
 ##### Graham scan
-
 > O(VlogV)
-
 ```C++
 struct Point {
     long x;
@@ -5460,23 +4787,15 @@ int main(int argc, char const *argv[]) {
         cout << "point " << my_stack[i] << " is on Convex Hull" << endl;
 }
 ```
-
-
-
 ## 8. Tricks + Miscellaneous
-
 ### 8.1 Bit Manipulation
-
 ```c++
 #define GET_BIT(n, i) (((n) & (1LL << ((i)-1))) >> ((i)-1)) // i start from 1
 #define SET_BIT(n, i) ((n) | (1LL << ((i)-1)))
 #define CLR_BIT(n, i) ((n) & ~(1LL << ((i)-1)))
 ```
-
 ### 8.1 Cantor Expansion / Reverse Cantor Expansion
-
 > for hashing, or ...
-
 ```C++
 long long factorial(int n) {
     if (n == 0)
@@ -5531,9 +4850,7 @@ void reverse_cantor_expansion(int n, long long m) {
     cout << "\n";
 }
 ```
-
 ### 8.2 pass 2-D array
-
 ```c++
 // The parameter is a 2D array
 int array[10][10];
@@ -5561,22 +4878,16 @@ void passFunc(int **a) {
 }
 passFunc(array);
 ```
-
 ### 8.3 Binary Display
-
 ```c++
 #include <bitset>
 void show_binary(unsigned long long x) {
 	printf("%s\n", bitset<64>(x).to_string().c_str());
 }
 ```
-
 ### 8.4 Fast Log
-
 > Built-in ``log(double)`` is not accurate for integer.
-> 
 > Should ``(int)(log(double)+0.000....001)``
-
 ```c++
 int fastlog(unsigned long long x, unsigned long long base) {
 	// ERROR VALUE IF X == BASE == ULLONG_MAX
@@ -5593,9 +4904,7 @@ int fastlog(unsigned long long x, unsigned long long base) {
 #undef S
 }
 ```
-
 ### 8.5 Squre Root
-
 ```c++
 long long sq(long long a) {
     long long l = 1;
